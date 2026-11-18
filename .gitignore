@@ -1,0 +1,33 @@
+# Secrets & config — NEVER commit real values
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+secrets/
+credentials*.json
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+*.egg-info/
+.ipynb_checkpoints/
+
+# Data & models (large / private)
+data/raw/
+data/market/
+*.sqlite
+*.db
+*.bak
+models/
+*.gguf
+chroma/
+chromadb/
+
+# Logs & runtime
+logs/
+*.log
+.DS_Store

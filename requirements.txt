@@ -1,0 +1,11 @@
+fastapi
+uvicorn[standard]
+httpx
+ollama
+anthropic
+chromadb
+pyodbc
+pandas
+numpy
+python-dotenv
+apscheduler

@@ -1,0 +1,3 @@
+-- SQL Server 2022 schema (operational DB).
+-- Tables: decisions, positions, scorecard, regime_log, evolution_history, pnl_snapshots, ...
+-- Replace with your sanitized DDL.

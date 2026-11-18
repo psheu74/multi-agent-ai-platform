@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1040 660" font-family="Segoe UI, Arial, sans-serif">
+  <rect width="1040" height="660" fill="#ffffff"/>
+  <text x="520" y="40" text-anchor="middle" font-size="25" font-weight="700" fill="#1F3864">Multi-Agent AI Platform — Architecture</text>
+  <text x="520" y="64" text-anchor="middle" font-size="14" fill="#5a5855">Local LLMs · frontier-in-the-loop · RAG · self-hosted GPU infrastructure</text>
+
+  <defs>
+    <marker id="a" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#8a8a8a"/></marker>
+  </defs>
+
+  <!-- Data sources -->
+  <rect x="40" y="95" width="960" height="66" rx="10" fill="#f3f6fb" stroke="#c9d6ea"/>
+  <text x="58" y="120" font-size="13" font-weight="700" fill="#1F3864">EXTERNAL DATA SOURCES</text>
+  <g font-size="12.5" fill="#333">
+    <rect x="60" y="128" width="150" height="24" rx="5" fill="#fff" stroke="#c9d6ea"/><text x="135" y="144" text-anchor="middle">News &amp; sentiment</text>
+    <rect x="225" y="128" width="150" height="24" rx="5" fill="#fff" stroke="#c9d6ea"/><text x="300" y="144" text-anchor="middle">Market data</text>
+    <rect x="390" y="128" width="150" height="24" rx="5" fill="#fff" stroke="#c9d6ea"/><text x="465" y="144" text-anchor="middle">Filings / insider</text>
+    <rect x="555" y="128" width="150" height="24" rx="5" fill="#fff" stroke="#c9d6ea"/><text x="630" y="144" text-anchor="middle">Macro calendar</text>
+    <rect x="720" y="128" width="265" height="24" rx="5" fill="#fff" stroke="#c9d6ea"/><text x="852" y="144" text-anchor="middle">Brokerage API (execution)</text>
+  </g>
+
+  <line x1="520" y1="161" x2="520" y2="192" stroke="#8a8a8a" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <!-- Agent layer -->
+  <rect x="40" y="195" width="960" height="118" rx="10" fill="#eef4ee" stroke="#bcd5bc"/>
+  <text x="58" y="218" font-size="13" font-weight="700" fill="#2f6b2f">AGENT LAYER — FastAPI services, least-privilege DB logins</text>
+  <g font-size="13">
+    <rect x="70" y="232" width="200" height="66" rx="8" fill="#fff" stroke="#bcd5bc"/><text x="170" y="260" text-anchor="middle" font-weight="700" fill="#2f6b2f">Research</text><text x="170" y="280" text-anchor="middle" font-size="11.5" fill="#555">gather &amp; analyze</text>
+    <rect x="300" y="232" width="200" height="66" rx="8" fill="#fff" stroke="#bcd5bc"/><text x="400" y="260" text-anchor="middle" font-weight="700" fill="#2f6b2f">Orchestrator</text><text x="400" y="280" text-anchor="middle" font-size="11.5" fill="#555">score · decide · route</text>
+    <rect x="530" y="232" width="200" height="66" rx="8" fill="#fff" stroke="#bcd5bc"/><text x="630" y="260" text-anchor="middle" font-weight="700" fill="#2f6b2f">Execution</text><text x="630" y="280" text-anchor="middle" font-size="11.5" fill="#555">act · guardrails</text>
+    <rect x="760" y="232" width="210" height="66" rx="8" fill="#fff" stroke="#e3b7b7"/><text x="865" y="260" text-anchor="middle" font-weight="700" fill="#a33">Supervisor</text><text x="865" y="280" text-anchor="middle" font-size="11.5" fill="#555">review · VETO override</text>
+  </g>
+
+  <line x1="300" y1="340" x2="300" y2="313" stroke="#8a8a8a" stroke-width="1.5" marker-end="url(#a)"/>
+  <line x1="740" y1="313" x2="740" y2="340" stroke="#8a8a8a" stroke-width="1.5" marker-end="url(#a)"/>
+  <text x="520" y="335" text-anchor="middle" font-size="11.5" fill="#8a8a8a">inference &amp; voting  ·  retrieval &amp; state</text>
+
+  <!-- Model layer -->
+  <rect x="40" y="345" width="470" height="150" rx="10" fill="#f1eefb" stroke="#ccc0ea"/>
+  <text x="58" y="368" font-size="13" font-weight="700" fill="#5a3fa0">MODEL LAYER</text>
+  <rect x="60" y="380" width="430" height="48" rx="7" fill="#fff" stroke="#ccc0ea"/>
+  <text x="275" y="400" text-anchor="middle" font-size="13" font-weight="700" fill="#5a3fa0">Ollama · 4× NVIDIA Tesla V100 32GB</text>
+  <text x="275" y="418" text-anchor="middle" font-size="11.5" fill="#555">local LLMs 8B–72B (Llama · Qwen · Phi) — multi-model vote</text>
+  <rect x="60" y="436" width="430" height="46" rx="7" fill="#fff" stroke="#ccc0ea" stroke-dasharray="4 3"/>
+  <text x="275" y="455" text-anchor="middle" font-size="13" font-weight="700" fill="#5a3fa0">Frontier model (Claude API)</text>
+  <text x="275" y="472" text-anchor="middle" font-size="11.5" fill="#555">training-data generation · fine-tuning · nightly review</text>
+
+  <!-- Data layer -->
+  <rect x="530" y="345" width="470" height="150" rx="10" fill="#eaf4f6" stroke="#b9dde3"/>
+  <text x="548" y="368" font-size="13" font-weight="700" fill="#0b6b7a">DATA &amp; KNOWLEDGE LAYER</text>
+  <rect x="550" y="380" width="430" height="48" rx="7" fill="#fff" stroke="#b9dde3"/>
+  <text x="765" y="400" text-anchor="middle" font-size="13" font-weight="700" fill="#0b6b7a">ChromaDB — vector store (RAG)</text>
+  <text x="765" y="418" text-anchor="middle" font-size="11.5" fill="#555">semantic retrieval of history &amp; context</text>
+  <rect x="550" y="436" width="430" height="46" rx="7" fill="#fff" stroke="#b9dde3"/>
+  <text x="765" y="455" text-anchor="middle" font-size="13" font-weight="700" fill="#0b6b7a">SQL Server 2022 (×2, mirrored)</text>
+  <text x="765" y="472" text-anchor="middle" font-size="11.5" fill="#555">operational + replica · 13-yr backtest lab</text>
+
+  <!-- Infra bar -->
+  <rect x="40" y="520" width="960" height="98" rx="10" fill="#f6f4ef" stroke="#ddd3bf"/>
+  <text x="58" y="543" font-size="13" font-weight="700" fill="#8a6d1f">INFRASTRUCTURE (designed, built &amp; operated solo)</text>
+  <g font-size="12" fill="#444">
+    <rect x="60" y="553" width="215" height="50" rx="7" fill="#fff" stroke="#ddd3bf"/><text x="167" y="574" text-anchor="middle" font-weight="700">VMware ESXi 8</text><text x="167" y="592" text-anchor="middle" font-size="11">HPE DL380 Gen10 · Optane PMem</text>
+    <rect x="290" y="553" width="215" height="50" rx="7" fill="#fff" stroke="#ddd3bf"/><text x="397" y="574" text-anchor="middle" font-weight="700">GPU passthrough</text><text x="397" y="592" text-anchor="middle" font-size="11">4× V100 + RTX 5060 Ti</text>
+    <rect x="520" y="553" width="215" height="50" rx="7" fill="#fff" stroke="#ddd3bf"/><text x="627" y="574" text-anchor="middle" font-weight="700">UniFi 10G · Tailscale</text><text x="627" y="592" text-anchor="middle" font-size="11">segmented network · remote access</text>
+    <rect x="750" y="553" width="220" height="50" rx="7" fill="#fff" stroke="#ddd3bf"/><text x="860" y="574" text-anchor="middle" font-weight="700">HPE iLO / Redfish</text><text x="860" y="592" text-anchor="middle" font-size="11">automated power lifecycle · 110+ jobs</text>
+  </g>
+</svg>
